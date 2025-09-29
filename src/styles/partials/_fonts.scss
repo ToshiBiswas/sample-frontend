@@ -1,0 +1,90 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: normal;
+  font-weight: $extralight;
+  src: url("#{$fp-extralight}") format("woff"),
+    url("#{$fp-extralight-alt}") format("woff2");
+}
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: normal;
+  font-weight: $light;
+  src: url("#{$fp-light}") format("woff"),
+    url("#{$fp-light-alt}") format("woff2");
+}
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: normal;
+  font-weight: $regular;
+  src: url("#{$fp-regular}") format("woff"),
+    url("#{$fp-regular-alt}") format("woff2");
+}
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: normal;
+  font-weight: $semibold;
+  src: url("#{$fp-semibold}") format("woff"),
+    url("#{$fp-semibold-alt}") format("woff2");
+}
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: normal;
+  font-weight: $bold;
+  src: url("#{$fp-bold}") format("woff"), url("#{$fp-bold-alt}") format("woff2");
+}
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: bold;
+  font-weight: $extrabold;
+  src: url("#{$fp-black}") format("woff"),
+    url("#{$fp-black-alt}") format("woff2");
+}
+
+/* Italic Versions */
+@font-face {
+  font-family: $font-family-main;
+  font-style: italic;
+  font-weight: $extralight;
+  src: url("#{$fp-extralightitalic}") format("woff"),
+    url("#{$fp-extralightitalic-alt}") format("woff2");
+}
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: italic;
+  font-weight: $light;
+  src: url("#{$fp-lightitalic}") format("woff"),
+    url("#{$fp-lightitalic-alt}") format("woff2");
+}
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: italic;
+  font-weight: $regular;
+  src: url("#{$fp-italic}") format("woff"),
+    url("#{$fp-italic-alt}") format("woff2");
+}
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: italic;
+  font-weight: $semibold;
+  src: url("#{$fp-semibolditalic}") format("woff"),
+    url("#{$fp-semibolditalic-alt}") format("woff2");
+}
+
+@font-face {
+  font-family: $font-family-main;
+  font-style: italic;
+  font-weight: $bold;
+  src: url("#{$fp-bolditalic}") format("woff"),
+    url("#{$fp-bolditalic-alt}") format("woff2");
+}

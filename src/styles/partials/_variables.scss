@@ -1,0 +1,84 @@
+// RESPONSIVE SCREEN SIZES
+$tablet__min-breakpoint: 768px;
+$tablet__max-breakpoint: 1279px;
+$desktop__min-breakpoint: 1280px;
+
+//layout control
+$mobile-column: auto;
+$mobile-gutter: 1rem;
+$mobile-margin: 1rem;
+
+$tablet-column: auto;
+$tablet-gutter: 1.5rem;
+$tablet-margin: 2rem;
+
+$desktop-column: 3.9375rem;
+$desktop-gutter: 1.5rem;
+$desktop-margin: auto;
+
+$padding: 0.5rem;
+$border-radius: 1.25rem;
+
+// color control
+//primary
+$primary-light: #ffffff;
+$primary-dark: #12182c; //InStock Black
+$primary-accent: #2e66e5; //Indigo
+
+//secondary
+$secondary-light: #bdc5d5; //Cloud
+$secondary-dark: #5c667e; //Slate
+
+//background
+$background-light: #f7f8f9; //Light Grey
+$background-dark: #232940; //Graphite
+
+//supporting
+$error-color: #c94515;
+$error-color-alt: rgba(201, 69, 21, 0.7);
+$btn-color: #158463;
+$btn-color-alt: rgba(21, 132, 99, 0.7);
+
+// Font Control
+$font-family-main: "TitilliumWeb";
+
+//Font Weights
+$extralight: 200;
+$light: 300;
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+$extrabold: 900;
+
+$fp-extralight: "/src/assets/font/TitilliumWeb-ExtraLight.woff";
+$fp-extralight-alt: "/src/assets/font/alternative-files/TitilliumWeb-ExtraLight.woff2";
+
+$fp-light: "/src/assets/font/TitilliumWeb-Light.woff";
+$fp-light-alt: "/src/assets/font/alternative-files/TitilliumWeb-Light.woff2";
+
+$fp-regular: "/src/assets/font/TitilliumWeb-Regular.woff";
+$fp-regular-alt: "/src/assets/font/alternative-files/TitilliumWeb-Regular.woff2";
+
+$fp-semibold: "/src/assets/font/TitilliumWeb-SemiBold.woff";
+$fp-semibold-alt: "/src/assets/font/alternative-files/TitilliumWeb-SemiBold.woff2";
+
+$fp-bold: "/src/assets/font/TitilliumWeb-Bold.woff";
+$fp-bold-alt: "/src/assets/font/alternative-files/TitilliumWeb-Bold.woff2";
+
+$fp-black: "/src/assets/font/TitilliumWeb-Black.woff";
+$fp-black-alt: "/src/assets/font/alternative-files/TitilliumWeb-Black.woff2";
+
+$fp-extralightitalic: "/src/assets/font/TitilliumWeb-ExtraLightItalic.woff";
+$fp-extralightitalic-alt: "/src/assets/font/alternative-files/TitilliumWeb-ExtraLightItalic.woff2";
+
+$fp-lightitalic: "/src/assets/font/TitilliumWeb-LightItalic.woff";
+$fp-lightitalic-alt: "/src/assets/font/alternative-files/TitilliumWeb-LightItalic.woff2";
+
+$fp-italic: "/src/assets/font/TitilliumWeb-Italic.woff";
+$fp-italic-alt: "/src/assets/font/alternative-files/TitilliumWeb-Italic.woff2";
+
+$fp-semibolditalic: "/src/assets/font/TitilliumWeb-SemiBoldItalic.woff";
+$fp-semibolditalic-alt: "/src/assets/font/alternative-files/TitilliumWeb-SemiBoldItalic.woff2";
+
+$fp-bolditalic: "/src/assets/font/TitilliumWeb-BoldItalic.woff";
+$fp-bolditalic-alt: "/src/assets/font/alternative-files/TitilliumWeb-BoldItalic.woff2";

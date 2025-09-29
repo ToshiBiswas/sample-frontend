@@ -1,0 +1,150 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables" as *;
+
+.popup-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35, 41, 64, 0.7);
+  z-index: 1000;
+}
+.popup {
+  display: none;
+
+  &--open {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: $primary-light;
+    padding: $padding;
+    border-radius: 0.1875rem;
+    z-index: 1001;
+
+    @include tablet {
+      width: 85%;
+      max-width: 42rem;
+      height: 16.375rem;
+      position: fixed;
+      top: 11.5625rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0rem 0.125rem 0.3125rem 0rem rgba(19, 24, 44, 0.1);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__close {
+    background-color: $primary-light;
+    padding: $padding;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__close-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  &__main {
+    height: 90%;
+    flex-flow: column nowrap;
+    @include flex-layout;
+
+    @include tablet {
+      margin: 0 $tablet-margin;
+    }
+  }
+
+  &__heading {
+    height: 2.5rem;
+  }
+
+  &__confirm {
+    height: 3.5;
+    font-weight: $regular;
+    @include body-large;
+
+    @include tablet {
+      width: 90%;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include tablet {
+      margin: 1rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0;
+
+    @include tablet {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: $primary-light;
+    border: 1px solid $secondary-dark;
+    cursor: pointer;
+    @include cta-btn;
+
+    @include tablet {
+      width: fit-content;
+    }
+
+    &:active {
+      transition: ease-in-out;
+      position: relative;
+      top: 0.2rem;
+    }
+  }
+
+  &__btn--delete {
+    background-color: $error-color;
+    color: $primary-light;
+    border: 1px solid $error-color;
+    @extend .popup__btn;
+  }
+
+  &__btn-text {
+    align-self: center;
+    text-decoration: none;
+  }
+
+  &__message {
+    text-align: center;
+    font-weight: $semibold;
+    padding-top: 0.5rem;
+
+    @include tablet {
+      text-align: end;
+    }
+  }
+
+  &__message--error {
+    @extend .popup__message;
+    color: $error-color;
+  }
+}

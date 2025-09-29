@@ -1,0 +1,26 @@
+@use "../../styles/partials/variables" as *;
+
+.error {
+  &__text {
+    display: none;
+
+    &--error {
+      color: $error-color;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.2rem;
+      margin-bottom: $mobile-gutter;
+      padding-top: 0.1rem;
+    }
+  }
+
+  &__field {
+    padding-bottom: 0.1rem;
+  }
+
+  &__icon {
+    height: 1rem;
+    padding-top: 1rem;
+  }
+}

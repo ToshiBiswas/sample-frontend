@@ -1,0 +1,197 @@
+
+@use '../../styles/partials/_fonts.scss' as *;
+@use '../../styles/partials/_mixins.scss' as *;
+@use '../../styles/partials/_variables.scss' as *;
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    header{
+        .header_section{
+            padding: $mobile-margin;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $background-dark;
+            gap: $mobile-gutter;    
+            padding-bottom: $mobile-margin+4rem;
+            .header_section_buttons{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                width: 100%;
+                gap: $mobile-gutter;
+                cursor: pointer;
+                & p {
+                    font-family: $font-family-main;
+                    font-weight: 600;
+                }
+                &_width {
+                    width: 100%;
+                }
+                .header_section_buttons_warehouses{
+                    border-radius: 999em;
+                    width: 100%;
+                    border: 0px;
+                    height: 36px;
+                    background-color: $background-dark;
+                    color: $secondary-light;
+                    &.active{
+                        background-color: $primary-dark;
+                        color: $primary-light;
+                    }  
+                    &:hover{
+                        color: $primary-light;
+                        text-decoration: underline solid $secondary-dark;
+                        cursor: pointer;
+                    }  
+                }
+                .header_section_buttons_inventories{
+                    width: 100%;
+                    border-radius: 999em;
+                    border: 0px;
+                    height: 36px;
+                    background-color: $background-dark;
+                    color: $secondary-light;
+                    &.active{
+                        background-color: $primary-dark;
+                        color: $primary-light;
+                    }  
+                    &:hover{
+                        color: $primary-light;
+                        text-decoration: underline solid $secondary-dark;
+                        cursor: pointer;
+                    }  
+                }
+            }
+    
+        }
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1279.9999999px) {
+    header{
+        padding-top: 1.5rem;
+        padding-left: 64px;
+        padding-right: 64px;
+        padding-bottom: 7.5rem;
+        background-color: $background-dark;    
+
+        .header_section{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            .header_section_buttons{    
+                display: flex;
+                gap: $tablet-gutter;
+                align-items: center;
+                & p {
+                    font-family: $font-family-main;
+                    font-weight: 600;
+                }
+                
+                .header_section_buttons_warehouses{
+                    border-radius: 999em;
+                    border: 0px;
+                    height: 38px;
+                    padding-left:16px;
+                    padding-right:16px;
+                    @include label;
+                    background-color: $background-dark;
+                    color: $secondary-light;
+                    &.active{
+                        background-color: $primary-dark;
+                        color: $primary-light; 
+                    }  
+                    &:hover{
+                        color: $primary-light;
+                        text-decoration: underline solid $secondary-dark;
+                        cursor: pointer;
+                    }  
+                }
+                .header_section_buttons_inventories{
+                    border-radius: 999em;
+                    border: 0px;
+                    height: 38px;
+                    padding-left:16px;
+                    padding-right:16px;
+                    @include label;
+                    background-color: $background-dark;
+                    color: $secondary-light;
+                    &.active{
+                        background-color: $primary-dark;
+                        color: $primary-light;  
+                    }  
+                    &:hover{
+                        color: $primary-light;
+                        text-decoration: underline solid $secondary-dark;
+                        cursor: pointer;
+                    } 
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    header{
+        padding-top: 1.5rem;
+        padding-left: 64px;
+        padding-right: 64px;
+        padding-bottom: 7.5rem;
+        background-color: $background-dark;    
+        display: flex;
+        justify-content: center;
+        .header_section{
+            width: 63.75rem;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            .header_section_buttons{    
+                display: flex;
+                gap: $tablet-gutter;
+                align-items: center;
+                & p {
+                    font-family: $font-family-main;
+                    font-weight: 600;
+                }
+                .header_section_buttons_warehouses{
+                    @include label;
+                    border-radius: 999em;
+                    border: 0px;
+                    height: 38px;
+                    padding-left:16px;
+                    padding-right:16px;
+                    background-color: $background-dark;
+                    color: $secondary-light;
+                    &.active{
+                        background-color: $primary-dark;
+                        color: $primary-light;  
+                    }  
+                    &:hover{
+                        color: $primary-light;
+                        text-decoration: underline solid $secondary-dark;
+                        cursor: pointer;
+                    }  
+                }
+                .header_section_buttons_inventories{
+                    @include label;
+                    border-radius: 999em;
+                    border: 0px;
+                    height: 38px;
+                    padding-left:16px;
+                    padding-right:16px;
+
+                    background-color: $background-dark;
+                    color: $secondary-light;
+                    &.active{
+                        background-color: $primary-dark;
+                        color: $primary-light;  
+                    }  
+                    &:hover{
+                        color: $primary-light;
+                        text-decoration: underline solid $secondary-dark;
+                        cursor: pointer;
+                    } 
+                }
+            }
+        }
+    }
+}

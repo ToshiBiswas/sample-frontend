@@ -1,0 +1,170 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables" as *;
+
+.item-details {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: $primary-light;
+  border-radius: 3px;
+  margin-top: 16px;
+  @include tablet {
+    margin: $tablet-margin;
+  }
+
+  @include desktop {
+    margin: $desktop-margin;
+    width: 1020px;
+  }
+
+  .warehouse-details__header {
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 16px;
+
+    @include tablet {
+      flex-flow: row nowrap;
+      padding: 32px;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &-edit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      font-weight: $semibold;
+      background-color: $primary-accent;
+      color: $primary-light;
+      height: 36px;
+      text-decoration: none;
+      width: 36px;
+
+      @include tablet {
+        width: auto;
+        padding: 0 16px;
+        height: 38px;
+      }
+
+      &:hover {
+        background-color: $background-dark;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .edit-text {
+      display: none;
+      @include tablet {
+        display: inline;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .warehouse-details__information {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px 15px;
+    border-top: 1px solid $secondary-light;
+    border-bottom: 1px solid $secondary-light;
+
+    @include tablet {
+      flex-flow: row nowrap;
+      padding: 24px 32px;
+      border-bottom: none;
+    }
+
+    h4 {
+      @include body-small;
+      text-transform: uppercase;
+      color: $secondary-dark;
+      font-weight: $semibold;
+      margin-bottom: 4px;
+      margin-top: 16px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    p {
+      margin-bottom: 16px;
+
+      &.in-stock {
+        background-color: rgba(21, 132, 99, 0.07);
+        color: $btn-color;
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 20px;
+        font-weight: $semibold;
+      }
+
+      &.out-of-stock {
+        background-color: rgba(201, 69, 21, 0.07);
+        color: $error-color;
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 20px;
+        font-weight: $semibold;
+      }
+    }
+
+    &__description {
+      margin-bottom: 24px;
+
+      @include tablet {
+        margin-bottom: 0;
+        width: 50%;
+        padding-right: 16px;
+      }
+
+      @include desktop {
+        width: 50%;
+        padding-right: 32px;
+      }
+    }
+
+    &_moreInformation {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      @include tablet {
+        width: 50%;
+        padding-left: 24px;
+        border-left: 1px solid $secondary-light;
+      }
+
+      @include desktop {
+        width: 50%;
+        padding-left: 32px;
+      }
+
+      .status-quantity-container {
+        display: flex;
+        justify-content: space-between;
+
+        .status-container,
+        .quantity-container {
+          flex: 1;
+        }
+      }
+
+      .warehouse-container {
+        margin-top: 16px;
+      }
+    }
+  }
+}

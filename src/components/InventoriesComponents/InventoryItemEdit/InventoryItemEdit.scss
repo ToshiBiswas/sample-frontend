@@ -1,0 +1,239 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables" as *;
+
+input,
+textarea,
+select {
+  &:focus {
+    border-color: $primary-accent;
+  }
+}
+
+.edit {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 0.1875rem;
+  background-color: $primary-light;
+  margin: 0 auto;
+  box-shadow: 0rem 0.125rem 0.3125rem 0rem rgba(19, 24, 44, 0.1);
+
+  @include tablet {
+    & {
+      width: 44rem;
+      margin: $tablet-margin auto;
+    }
+  }
+
+  @include desktop {
+    & {
+      width: 63.75rem;
+      margin: $desktop-margin auto;
+    }
+  }
+
+  &__header-content {
+    width: 100%;
+    height: 2.25rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2.5rem 2rem;
+
+    @include tablet {
+      & {
+        justify-content: flex-start;
+        border-bottom: 1px solid $secondary-light;
+      }
+    }
+  }
+
+  &__backlink {
+    width: 1.5rem;
+    height: 1.5rem;
+    text-decoration: none;
+    color: $primary-accent;
+    cursor: pointer;
+  }
+
+  &__backarrow {
+    align-self: center;
+  }
+
+  &__heading {
+    align-self: center;
+    font-weight: $semibold;
+  }
+}
+
+.form {
+  display: block;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+
+    @include tablet {
+      & {
+        width: 100%;
+        flex-direction: row;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    @include desktop {
+      & {
+        flex-direction: row;
+        padding: 0.5rem 2rem;
+      }
+    }
+  }
+
+  &__column {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid $secondary-light;
+    position: relative;
+
+    @include tablet {
+      & {
+        width: calc(50% - 0.5rem);
+        border-top: 0;
+        padding: 1rem 2rem;
+      }
+    }
+
+    &:first-child::after {
+      @include tablet {
+        & {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 5%;
+          height: 90%;
+          width: 1px;
+          background-color: $secondary-light;
+        }
+      }
+    }
+  }
+
+  &__label {
+    font-size: 0.8125rem;
+    font-weight: $semibold;
+    margin-top: 1rem;
+    @include label;
+
+    @include tablet {
+      & {
+        margin-top: 1.75rem;
+      }
+    }
+  }
+
+  &__input {
+    background-color: $primary-light;
+    outline: none;
+    border: 1px solid $secondary-light;
+    font-family: $font-family-main;
+    @include form-field;
+  }
+
+  &__input--description {
+    height: 7.5rem;
+    resize: none;
+    padding: $padding $padding * 1;
+    @extend .form__input;
+  }
+
+  &__input--error {
+    border-color: $error-color;
+  }
+
+  &__categories {
+    background-color: $primary-light;
+    outline: none;
+    border: 1px solid $secondary-light;
+    font-family: $font-family-main;
+    margin-bottom: 1rem;
+    appearance: none;
+    background: url("/src/assets/icons/arrow_drop_down-24px.svg") no-repeat
+      right 0.5rem center;
+    @include form-field;
+  }
+
+  &__status {
+    margin-top: 1rem;
+    @include label;
+  }
+  &__radios {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+  }
+
+  &__radio {
+    @include radio-btn;
+  }
+
+  &__radio--alt {
+    color: $secondary-dark;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: $background-light;
+    gap: 0.625rem;
+    padding: 1rem;
+
+    @include tablet {
+      & {
+        height: 4.375rem;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family-main;
+    color: $primary-dark;
+    font-size: 0.8125rem;
+    font-weight: $semibold;
+    line-height: 1.25rem;
+    background-color: $primary-light;
+    border: 1px solid $secondary-light;
+    @include cta-btn;
+
+    @include tablet {
+      & {
+        width: 4.5rem;
+      }
+    }
+  }
+
+  &__button--alt {
+    background-color: $primary-accent;
+    color: $primary-light;
+    border-color: $primary-accent;
+    @extend .form__button;
+  }
+
+  &__warehouses {
+    @extend .form__categories;
+  }
+
+  &__error {
+    padding-top: 0.25rem;
+    color: $error-color;
+  }
+}

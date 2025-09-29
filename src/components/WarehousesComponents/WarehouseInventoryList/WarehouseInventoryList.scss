@@ -1,0 +1,266 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables" as *;
+.inventory-list--header {
+  display: none;
+  h3 {
+    @include body-small;
+
+    & {
+      color: $secondary-dark;
+      text-transform: uppercase;
+    }
+
+    @include tablet {
+      &:nth-child(1) {
+        width: 25%;
+      }
+      &:nth-child(2) {
+        width: 19%;
+      }
+      &:nth-child(3) {
+        width: 34%;
+      }
+      &:nth-child(4) {
+        width: 25%;
+      }
+      &:nth-child(5) {
+        width: 10%;
+      }
+    }
+
+    @include desktop {
+      &:nth-child(1) {
+        width: 18%;
+      }
+      &:nth-child(2) {
+        width: 19%;
+      }
+      &:nth-child(3) {
+        width: 28%;
+      }
+      &:nth-child(4) {
+        width: 34%;
+      }
+      &:nth-child(5) {
+        width: 4%;
+      }
+    }
+
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 16px;
+      height: 16px;
+      margin-left: 0.25rem;
+      cursor: pointer;
+    }
+  }
+
+  @include tablet {
+    background-color: $background-light;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+  }
+}
+.inventory-list {
+  @include flex-layout;
+  & {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background-color: $primary-light;
+    gap: 0;
+  }
+
+  h3 {
+    color: $secondary-dark;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    @include flex-layout;
+
+    &:hover {
+      background-color: #2e66e512;
+    }
+
+    & {
+      @include body-small;
+
+      & {
+        flex-wrap: wrap;
+        padding: 0;
+        gap: 0;
+        margin: 0;
+        border-bottom: 1px solid $secondary-light;
+      }
+
+      @include tablet {
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+
+        &-name,
+        &-category {
+          order: 0;
+        }
+
+        &-status,
+        &-quantity,
+        &-cta {
+          order: 1;
+        }
+      }
+    }
+
+    h3 {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-category {
+      @include tablet {
+        width: 19%;
+      }
+
+      @include desktop {
+        width: 19%;
+      }
+    }
+
+    &-status {
+      @include tablet {
+        width: 35%;
+      }
+
+      @include desktop {
+        width: 28%;
+      }
+    }
+
+    &-quantity {
+      @include tablet {
+        width: 25%;
+      }
+
+      @include desktop {
+        width: 34%;
+      }
+    }
+
+    &-name,
+    &-category,
+    &-status,
+    &-quantity {
+      margin: 1rem;
+      flex-basis: calc(40% - 1rem);
+
+      @include tablet {
+        flex-basis: auto;
+        margin: 0.5rem 0;
+        padding: 0;
+      }
+    }
+
+    &-category,
+    &-quantity,
+    &-cta {
+      margin: 1rem;
+
+      @include tablet {
+        margin: 1rem 0;
+      }
+    }
+
+    &-name {
+      p {
+        display: flex;
+        align-items: center;
+
+        color: blue;
+      }
+
+      &__item {
+        text-decoration: none;
+      }
+
+      @include tablet {
+        margin-left: 0;
+        width: 25%;
+      }
+
+      @include desktop {
+        width: 18%;
+      }
+    }
+
+    &-quantity {
+      h3 {
+        margin-bottom: 0.25rem;
+      }
+
+      p {
+        font-weight: $regular;
+      }
+
+      @include tablet {
+        margin: 0;
+        padding: 0.5rem 0;
+      }
+    }
+
+    &-cta {
+      @include flex-layout;
+      & {
+        padding: 0.5rem 0;
+        margin: 0 1rem 1rem 1rem;
+        gap: 0.5rem;
+        width: 100%;
+        justify-content: end;
+        align-self: flex-end;
+      }
+
+      & a:first-of-type {
+        flex: 1;
+      }
+
+      @include tablet {
+        margin: 0;
+        width: 10%;
+      }
+
+      @include desktop {
+        gap: 1rem;
+        width: 4%;
+      }
+    }
+  }
+
+  // Status tag styling
+  &__status-tag {
+    @include tag;
+    & {
+      line-height: normal;
+      padding-top: 0.125rem;
+      display: inline-block;
+      text-align: center;
+      font-weight: $semibold;
+      text-transform: uppercase;
+    }
+
+    &--green {
+      background-color: rgba(21, 132, 99, 0.07);
+      color: $btn-color;
+    }
+
+    &--red {
+      background-color: rgba(201, 69, 21, 0.07);
+      color: $error-color;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@use "./variables" as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet__min-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop__min-breakpoint) {
+    @content;
+  }
+}
+
+@mixin body-small {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+@mixin body-large {
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+
+  @include tablet {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+}
+
+@mixin cta-btn {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+
+  @include tablet {
+    height: 2.375rem;
+    padding: 1rem;
+  }
+}
+
+@mixin flex-layout {
+  display: flex;
+  padding: $padding;
+  margin: $mobile-margin;
+  gap: $mobile-gutter;
+
+  @include tablet {
+    margin: $tablet-margin;
+    gap: $tablet-gutter;
+  }
+
+  @include desktop {
+    margin: $desktop-margin;
+  }
+}
+
+@mixin flex-item {
+  flex-basis: $mobile-column;
+
+  @include desktop {
+    flex-basis: $desktop-column;
+  }
+}
+
+@mixin form-field {
+  width: 100%;
+  height: 2.25rem;
+  padding: 0 $padding * 2;
+  border-radius: 1.25rem;
+
+  @include tablet {
+    height: 2.375rem;
+  }
+}
+
+@mixin label {
+  margin-bottom: 0.25rem;
+}
+
+@mixin radio-btn {
+  margin-right: 0.5rem;
+}
+
+@mixin tag {
+  height: 1.5rem;
+  padding: 0 $padding;
+  border-radius: 1.25rem;
+
+  @include tablet {
+    height: 1.625rem;
+  }
+
+  &--red {
+    background: $btn-color-alt;
+  }
+
+  &--green {
+    background: $btn-color;
+  }
+}

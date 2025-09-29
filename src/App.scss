@@ -1,0 +1,98 @@
+@use "./styles/partials/fonts" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-light;
+  font-family: $font-family-main;
+  font-size: 0.8125rem;
+  font-weight: $regular;
+  line-height: 1.25rem;
+  color: $primary-dark;
+
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+//Page Header
+h1 {
+  font-size: 1.75rem;
+  font-weight: $semibold;
+  line-height: 2.25rem;
+
+  @include tablet {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+//Subheader
+h2 {
+  font-size: 1.25rem;
+  font-weight: $semibold;
+  line-height: 2.25rem;
+
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+//Labels, Links & Buttons
+h3 {
+  font-size: 0.8125rem;
+  font-weight: $semibold;
+  line-height: 1.25rem;
+
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+//Table Header
+h4 {
+  font-size: 0.6875rem;
+  font-weight: $regular;
+  line-height: 1rem;
+
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+.Layout{
+  position: relative;
+  margin: $mobile-margin;
+    
+  @include tablet {
+    margin: $tablet-margin;
+  }
+
+  @include desktop {
+    margin: $desktop-margin;
+    width: 1020px;
+  }
+  .Layout_section{
+
+      position: absolute;
+      top: -5.5rem;
+      width: 100%;
+      // margin-top: 18px;
+      @include tablet{
+          top: -10.5rem;
+          // margin-top: 32px;
+
+      }
+      @include desktop{
+          top: -6.5rem;
+          margin-top: 0;
+      }
+  }
+}
+

@@ -1,0 +1,149 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables" as *;
+
+.warehouse-details {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: $primary-light;
+  border-radius: 3px;
+  margin-top: 16px;
+  @include tablet {
+    margin: $tablet-margin;
+  }
+
+  @include desktop {
+    margin: $desktop-margin;
+    margin-top:0px;
+    width: 1020px;
+  }
+
+  &__header {
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 16px;
+
+    @include tablet {
+      flex-flow: row nowrap;
+      padding: 32px;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &-edit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      font-weight: $semibold;
+      background-color: $primary-accent;
+      color: $primary-light;
+      height: 36px;
+      text-decoration: none;
+      width: 36px;
+
+      @include tablet {
+        width: auto;
+        padding: 0 16px;
+        height: 38px;
+      }
+
+      &:hover {
+        background-color: $background-dark;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .edit-text {
+      display: none;
+      @include tablet {
+        display: inline;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &__information {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px 15px;
+    border-top: 1px solid $secondary-light;
+    border-bottom: 1px solid $secondary-light;
+
+    @include tablet {
+      flex-flow: row nowrap;
+      padding: 24px 32px;
+      border-bottom: none;
+    }
+
+    h4 {
+      @include body-small;
+      text-transform: uppercase;
+      color: $secondary-dark;
+      font-weight: $semibold;
+      margin-bottom: 4px;
+    }
+
+    &-address {
+      margin-bottom: 24px;
+
+      @include tablet {
+        margin-bottom: 0;
+        width: 33%;
+        padding-right: 16px;
+      }
+
+      @include desktop {
+        width: 35%;
+      }
+    }
+
+    &-contact {
+      display: flex;
+      gap: 24px;
+
+      @include tablet {
+        flex-flow: row nowrap;
+        width: 67%;
+        padding-left: 24px;
+        border-left: 1px solid $secondary-light;
+        gap: 32px;
+      }
+
+      @include desktop {
+        width: 65%;
+        gap: 48px;
+      }
+
+      &-name,
+      &-info {
+        @include tablet {
+          flex: 1;
+        }
+
+        h4 {
+          margin-bottom: 8px;
+        }
+
+        p {
+          margin-bottom: 4px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
